@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome - Sonali’s App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎉 Welcome!</h1>
+    <p id="welcome-message">Hello, user!</p>
+    <a href="login.html" class="btn">Logout</a>
+  </div>
+
+  <script>
+    // Read username from query string (?user=sonali)
+    const params = new URLSearchParams(window.location.search);
+    const user = params.get("user");
+    if (user) {
+      document.getElementById("welcome-message").textContent = `Hello, ${user}! You are logged in 🚀`;
+    }
+  </script>
+</body>
+</html>
