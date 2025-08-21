@@ -50,7 +50,7 @@ app.post("/login", (req, res) => {
             res.send("User not found");
         } else {
             if (bcrypt.compareSync(password, user.password)) {
-                res.send(`Welcome ${username}! 🎉`);
+                res.redirect(`/welcome.html?user=${encodeURIComponent(username)}`);
             } else {
                 res.send("Incorrect password");
             }
